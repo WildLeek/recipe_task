@@ -33,6 +33,20 @@ const loadRecipes = async() => {
 const displayRecipes = (recipes) => {
   let htmlString = recipes
     .map((recipe) => {
+      let ingredientString = ""
+      getIngredientMap(recipe)
+        .forEach((amount, item) => {
+          if (amount !== null) {
+            ingredientString += `
+              <p>${amount} ${item}</p>
+            `
+          } else {
+            ingredientString += `
+              <p>${amount}</p>
+            `
+          }
+        })
+        console.log(ingredientString)
       return `
         <li class="recipe" id="${recipe.title.replace(/\s/g, '')}">
           <div class="recipeHeader">
@@ -46,7 +60,7 @@ const displayRecipes = (recipes) => {
             <h3> Ingredients </h3>
             <div class="ingredients">
               <p class="servings">Makes ${recipe.servings} servings.</p>
-              <p>${recipe.ingredients.join("</p><p>")}</p>
+              ${ingredientString}
             </div>
             <h3> Directions </h3>
             <div class="directions"><p>${recipe.directions.join("</p><p>")}</p></div>
@@ -74,6 +88,25 @@ const displayRecipes = (recipes) => {
       }
     })
   }
+}
+
+function getIngredientMap(recipe) {
+  console.log(recipe)
+  let ingredients = new Map()
+  let regex = /[0-9]+[\s]?[0-9]*([\/][0-9]+[,.]?[0-9]*)*/
+  recipe.ingredients
+    .map((ingredient) => {     
+      let amount = regex.exec(ingredient)
+      if (amount !== null) {
+        amount = amount[0]
+        amount = amount.trim()
+      }
+      let item = ingredient.split(amount).join("")
+      item = item.trim()
+      ingredients.set(item, amount)
+    })
+  // console.log(ingredients)
+  return ingredients
 }
 
 loadRecipes()
