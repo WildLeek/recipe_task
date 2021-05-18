@@ -1,0 +1,42 @@
+ /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+/* Style the collapsible content. Note: hidden by default */
+.moreInfo {
+    display: none;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.servings {
+    font-size: larger;
+    font-style: italic;
+    text-align: right;
+}
+
+h3 {
+    color: #003300;
+    font-size: x-large;
+    margin-top: 30px;
+}
+
+hr {
+    width: 100%;
+    margin: 15px;
+    margin-right: 0;
+    margin-left: 0
+}
+
+.ingredients { 
+    display: block;
+    background-color: #e6ffe6;
+    border: 2px solid #004d00;
+    border-radius: 5px;
+    padding: 3px;
+    width: 50%;
+}
+a.source {
+    color: #004d00;
+    text-decoration: none;
+    float: right
+}

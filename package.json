@@ -1,0 +1,19 @@
+{
+  "name": "recipe_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "glob": "^7.1.7",
+    "http": "^0.0.1-security",
+    "node-static": "^0.7.11",
+    "nodemon": "^2.0.7"
+  }
+}
