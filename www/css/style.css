@@ -12,7 +12,7 @@ body {
     max-width: 1000px;
     text-align: center;
 }
-.recipehead {
+.recipeHeader {
     width: 100%
 }
 
@@ -22,7 +22,7 @@ h1 {
     color: #ffffff;
     margin-bottom: 30px;
 }
-.recipe > h2 {
+.recipeHeader > h2 {
     padding-bottom: 5px;
     text-align: center
 }
